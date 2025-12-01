@@ -17,9 +17,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: const Text("Test Logo")),
+        body: Center(
+          child: Image.asset('assets/images/logo.jpeg/logo.jpeg'),
+        ),
+      ),
       title: 'RDC_VACCIN',
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/splash',
       theme: ThemeData(
        
        primarySwatch: Colors.blue
@@ -27,11 +33,11 @@ class MyApp extends StatelessWidget {
       
       routes: {
         '/home': (context) =>  HomePage(),
-        '/parentProfile': (context) => ParentProfilePage(),
-        '/AddChildPage':(context) => AddChildPage(),
-        '/':(context) =>  SplashScreen(),
-        '/login':(context) => LoginPage(),
-        '/register':(context) => RegisterPage(),
+        '/parentProfile': (context) =>  ParentProfilePage(),
+        '/AddChildPage':(context) =>  AddChildPage(),
+        '/splash':(context) => SplashScreen(),
+        '/login':(context) =>  LoginPage(),
+        '/register':(context) =>  RegisterPage(),
         
         
         

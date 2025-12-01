@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: (){
-                    Navigator.pushReplacementNamed(context,'\home');
+                    Navigator.pushReplacementNamed(context,'/home');
                   },
                   child:Text("Se connecter"),
                 ),
@@ -62,6 +62,24 @@ class _LoginPageState extends State<LoginPage> {
                   style: TextStyle(
                     decoration: TextDecoration.underline,
                   ),
+                ),
+              ),
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                  onPressed: (){
+                    final String testEmail = "ibulakitadi@gmail.com";
+                    final String testPassword = "221242";
+
+                    if (emailControler.text == testEmail && passwordControler.text == testPassword){
+                      Navigator.pushNamed(context,'/home');
+                    }else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        SnackBar(content: Text("Email ou mot de passe incorrect")),
+                      );
+                    }
+                  },
+                  child: Text("Connexion"),
                 ),
               ),
             ],

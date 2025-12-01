@@ -9,16 +9,20 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState (){
     super.initState();
-    Timer(const Duration(seconds: 2), () {
+    Timer(const Duration(seconds: 3), () {
       Navigator.of(context).pushReplacementNamed('/login');
     });
   }
   @override   
   Widget build(BuildContext context){
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: Colors.white,
       body: Center(
-        child: CircularProgressIndicator(),
+        child: Image.asset(
+          'assets/images/logo.jpeg/logo.jpeg',
+          width:200,
       ),
+    ),
     );
   }
 }
